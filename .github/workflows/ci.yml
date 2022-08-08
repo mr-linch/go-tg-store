@@ -122,6 +122,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Go Work
+        run: |
+          make workspace
+          
       - name: Test
         env: 
           POSTGRES_DSN: postgres://go-tg:go-tg@localhost:5432/go-tg?sslmode=disable
