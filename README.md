@@ -29,3 +29,9 @@ go get github.com/mr-linch/go-tg-store/sessionredis
 ## sessionsql [![Go Reference](https://pkg.go.dev/badge/github.com/mr-linch/go-tg-store/sessionsql.svg)](https://pkg.go.dev/github.com/mr-linch/go-tg-store/sessionsql)
 
 This generic SQL implementation of [session store](https://pkg.go.dev/github.com/mr-linch/go-tg@latest/tgb/session#Store). It uses [database/sql](https://pkg.go.dev/database/sql) package as backend.
+
+### Installation
+
+```bash
+go get github.com/mr-linch/go-tg-store/sessionsql
+```
