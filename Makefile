@@ -2,7 +2,7 @@
 .PHONY: go-tidy
 go-tidy: ## tidy all go modules
 	$(call print-target)
-	find . -name 'go.mod' -execdir go mod tidy -v \;
+	find . -mindepth 2 -name 'go.mod' -execdir go mod tidy -v \;
 
 .PHONY: help
 help:
