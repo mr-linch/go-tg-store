@@ -6,33 +6,28 @@ on:
     branches: [main]
 
 jobs:
-  resolve-modules:
-    name: Resolve Modules
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
-    steps:
-      - name: Checkout Sources
-        uses: actions/checkout@v2
-      - id: set-matrix
-        run: ./.github/workflows/scripts/resolve-modules.sh
 
   lint:
     name: Lint
     runs-on: ubuntu-latest
     needs: [resolve-modules]
-    strategy:
-      matrix: ${{ fromJson(needs.resolve-modules.outputs.matrix) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Lint
-        uses: golangci/golangci-lint-action@v3
+      - uses: golangci/golangci-lint-action@v3
         with:
           version: v1.46
-          working-directory: ${{ matrix.workdir }}
-
+          working-directory: ./sessionbolt
+      - uses: golangci/golangci-lint-action@v3
+        with:
+          version: v1.46
+          working-directory: ./sessionsql
+      - uses: golangci/golangci-lint-action@v3
+        with:
+          version: v1.46
+          working-directory: ./sessionredis
+          
   tidy:
     name: Go Tidy
     runs-on: ubuntu-latest
