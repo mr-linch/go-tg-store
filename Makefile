@@ -13,6 +13,9 @@ tests: ## run tests of all submodules
 	$(call print-target)
 	go test -race -timeout 30s -v -coverprofile=coverage.txt $(shell dirname `find . -name 'go.mod'`)
 
+.PHONE: workspace
+workspace: ## init go workspace 
+	go work init $(shell dirname `find . -name 'go.mod'`)
 
 define print-target
 	@printf "Executing target: \033[36m$@\033[0m\n"
