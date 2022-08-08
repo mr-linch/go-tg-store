@@ -20,10 +20,15 @@ jobs:
 
       - name: Pull latest version
         run: |
-          version=${GITHUB_REF#refs/*/}
+          go mod init tmp
 
-          submodules=$(dirname $(find . -maxdepth 2 -name 'go.mod'))
+          version=${GITHUB_REF#refs/*/}
+          
+          submodules=$(dirname $(find . -mindepth 2 -maxdepth 2 -name 'go.mod'))
+
 
           for submodule in $submodules; do
-            go get -v github.com/mr-linch/go-tg-store/${submodule/.\//}@${version}
+            path=github.com/mr-linch/go-tg-store/${submodule/.\//}@${version}
+            echo "Updating $path"
+            go get "$path"
           done
