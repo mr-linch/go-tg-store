@@ -1,3 +1,3 @@
-module github.com/mr-linch/go-tg/tgb/session/sessionredis
+module github.com/mr-linch/go-tg-store/sessionredis
 
 go 1.18

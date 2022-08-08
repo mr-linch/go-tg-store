@@ -12,22 +12,23 @@
 //  3. define store
 //
 // Example:
-//  import (
-//    "github.com/go-redis/redis/v9"
-//    // or "github.com/go-redis/redis/v8"
-//    "github.com/mr-linch/go-tg/tgb/session/sessionredis"
-//  )
 //
-//  func run(ctx context.Context) error {
-// 	  opts, err := redis.ParseURL("redis://localhost:6379")
-//    if err != nil {
-//      return err
-//    }
-//    client := redis.NewClient(opts)
+//	 import (
+//	   "github.com/go-redis/redis/v9"
+//	   // or "github.com/go-redis/redis/v8"
+//	   "github.com/mr-linch/go-tg-store/sessionredis"
+//	 )
 //
-//    store := sessionredis.NewStore[*redis.StatusCmd, *redis.StringCmd, *redis.IntCmd](client)
-//    // use store :)
-//  }
+//	 func run(ctx context.Context) error {
+//		  opts, err := redis.ParseURL("redis://localhost:6379")
+//	   if err != nil {
+//	     return err
+//	   }
+//	   client := redis.NewClient(opts)
+//
+//	   store := sessionredis.NewStore[*redis.StatusCmd, *redis.StringCmd, *redis.IntCmd](client)
+//	   // use store :)
+//	 }
 package sessionredis
 
 import (

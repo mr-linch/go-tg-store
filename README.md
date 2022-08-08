@@ -18,7 +18,7 @@ go get github.com/mr-linch/go-tg-store/sessionbolt
 
 ## sessionredis [![Go Reference](https://pkg.go.dev/badge/github.com/mr-linch/go-tg-store/sessionredis.svg)](https://pkg.go.dev/github.com/mr-linch/go-tg-store/sessionredis)
 
-This is a [go-redis](https://github.com/go-redis/redis) implementation of [session store](https://pkg.go.dev/github.com/mr-linch/go-tg@latest/tgb/session#Store).
+This is a [go-redis](https://github.com/go-redis/redis) implementation of [session store](https://pkg.go.dev/github.com/mr-linch/go-tg/tgb/session#Store).
 
 ### Installation
 
@@ -28,7 +28,7 @@ go get github.com/mr-linch/go-tg-store/sessionredis
 
 ## sessionsql [![Go Reference](https://pkg.go.dev/badge/github.com/mr-linch/go-tg-store/sessionsql.svg)](https://pkg.go.dev/github.com/mr-linch/go-tg-store/sessionsql)
 
-This generic SQL implementation of [session store](https://pkg.go.dev/github.com/mr-linch/go-tg@latest/tgb/session#Store). It uses [database/sql](https://pkg.go.dev/database/sql) package as backend.
+This generic SQL implementation of [session store](https://pkg.go.dev/github.com/mr-linch/go-tg/tgb/session#Store). It uses [database/sql](https://pkg.go.dev/database/sql) package as backend.
 
 ### Installation
 
