@@ -15,7 +15,7 @@ jobs:
       - name: Checkout Sources
         uses: actions/checkout@v2
       - id: set-matrix
-        run: ./github/workflows/scripts/resolve-modules.sh
+        run: ./.github/workflows/scripts/resolve-modules.sh
 
   lint:
     name: Lint
