@@ -15,7 +15,7 @@ tests: ## run tests of all submodules
 
 .PHONE: workspace
 workspace: ## init go workspace 
-	go work init $(shell dirname -mindepth `find . -name 'go.mod'`)
+	go work init $(shell dirname -mindepth `find -mindepth 2 . -name 'go.mod'`)
 
 define print-target
 	@printf "Executing target: \033[36m$@\033[0m\n"
